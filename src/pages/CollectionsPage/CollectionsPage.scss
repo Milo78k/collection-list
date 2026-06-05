@@ -1,0 +1,149 @@
+@use "@/styles/variables" as *;
+
+.collections-page {
+  padding: 32px 16px 80px;
+
+  &__container {
+    max-width: $container-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  &__content {
+    padding: 24px;
+    background: $color-bg-card;
+    border: 1px solid $color-border-light;
+    border-radius: 20px;
+  }
+
+  &__header {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    color: $color-text-primary;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__description {
+    margin: 0;
+    color: $color-text-secondary;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__error {
+    margin: 0;
+    padding: 24px;
+    color: red;
+    text-align: center;
+  }
+
+  &__filter-button {
+    display: none;
+  }
+
+  &__sidebar {
+    background: $color-bg-card;
+    border: 1px solid $color-border-light;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(28, 28, 28, 0.08);
+  }
+
+  &__sidebar-close {
+    display: none;
+  }
+}
+
+@media (max-width: $tablet) {
+  .collections-page {
+    &__container {
+      grid-template-columns: 1fr;
+    }
+
+    &__filter-button {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid $color-border-light;
+      border-radius: 10px;
+      background: $color-bg-card;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 300;
+      width: 320px;
+      max-width: 85vw;
+      height: auto;
+      max-height: 100vh;
+      padding: 56px 16px 24px;
+      border-radius: 0;
+      border: none;
+      background: $color-bg-card;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      box-shadow: -8px 0 24px rgba(0, 0, 0, 0.16);
+
+      &--open {
+        transform: translateX(0);
+      }
+    }
+
+    &__sidebar-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .collections-page {
+    padding: 24px 8px 60px;
+
+    &__content {
+      padding: 16px;
+      border-radius: 16px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__sidebar {
+      width: 100%;
+      max-width: none;
+      min-height: 100vh;
+      padding: 56px 16px 24px;
+    }
+  }
+}

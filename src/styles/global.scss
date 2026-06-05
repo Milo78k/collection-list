@@ -1,0 +1,25 @@
+@use "./variables" as *;
+
+body {
+  font-family: Manrope, Inter, sans-serif;
+  background: $color-bg-main;
+  color: $color-black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    flex: 1;
+  }
+}

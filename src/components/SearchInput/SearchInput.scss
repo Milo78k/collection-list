@@ -1,0 +1,36 @@
+@use "@/styles/variables" as *;
+
+.search-input {
+  position: relative;
+  width: 100%;
+
+  &__field {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px 0 42px;
+    border: 1px solid $color-border-light;
+    border-radius: 22px;
+    background: $color-bg-card;
+    font-size: 14px;
+    color: $color-text-primary;
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+      color: $color-text-disabled;
+    }
+
+    &:focus {
+      border-color: $color-primary;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    width: 16px;
+    height: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}

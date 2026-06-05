@@ -1,0 +1,20 @@
+.collection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__empty {
+    margin: 0;
+    padding: 40px 16px;
+    color: #747474;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .collection-list {
+    gap: 16px;
+  }
+}

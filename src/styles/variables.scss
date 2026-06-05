@@ -1,0 +1,61 @@
+/* ===== COLORS ===== */
+
+/* Main */
+$color-primary: #6a0bff;
+$color-primary-hover: #5509cc;
+$color-primary-dark: #4600e9;
+
+/* Accent */
+$color-blue: #00bcff;
+$color-green: #00cf7f;
+$color-purple: #b659ff;
+$color-orange: #ff4d12;
+$color-coral: #ff7361;
+
+/* Backgrounds */
+$color-bg-main: #f8f8f8;
+$color-bg-dark: #141414;
+$color-bg-card: #ffffff;
+$color-bg-sidebar: #ffffff;
+$color-bg-footer: #18003e;
+
+/* Text */
+$color-text-primary: #303030;
+$color-text-secondary: #474747;
+$color-text-muted: #5e5e5e;
+$color-text-light: #8c8c8c;
+$color-text-disabled: #a3a3a3;
+$color-text-white: #ffffff;
+
+/* Borders */
+$color-border-light: #e8e8e8;
+$color-border-medium: #bababa;
+
+/* Overlays / transparent */
+$color-overlay-dark: rgba(28, 28, 28, 0.2); // #1C1C1C33
+$color-overlay-light: rgba(230, 230, 230, 0.1); // #E6E6E61A
+
+/* Special */
+$color-black: #191919;
+$color-accent-button: #5533ff;
+
+/* ===== SHADOWS ===== */
+
+$shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+/* ===== BORDER RADIUS ===== */
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+/* ===== CONTAINER ===== */
+
+$container-width: 1180px;
+
+/* ===== BREAKPOINTS ===== */
+
+$desktop: 1200px;
+$tablet: 900px;
+$mobile: 600px;
