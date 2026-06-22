@@ -1,0 +1,84 @@
+@use "@/app/styles/variables" as *;
+
+.not-found {
+  min-height: calc(100vh - 120px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+
+  &__container {
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__code {
+    margin-bottom: 12px;
+    color: $color-primary;
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    color: $color-text-primary;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__description {
+    margin: 0 0 32px;
+    color: $color-text-secondary;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  &__button {
+    min-width: 220px;
+    height: 52px;
+    padding: 0 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: $color-primary;
+    color: $color-text-white;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .not-found {
+    &__code {
+      font-size: 88px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+}

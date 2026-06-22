@@ -1,0 +1,137 @@
+@use "@/app/styles/variables" as *;
+
+.collection-hero {
+  margin-bottom: 20px;
+  padding: 24px;
+
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 24px;
+
+  background: $color-bg-card;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(28, 28, 28, 0.08);
+
+  text-align: left;
+
+  &__image-wrapper {
+    width: 160px;
+    height: 160px;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #d9ff00 0%, #00c853 55%, #0091ea 100%);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+  }
+
+  &__image-placeholder {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $color-text-white;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    text-align: center;
+  }
+
+  &__content {
+    min-width: 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__info {
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+
+    color: $color-text-primary;
+
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__description {
+    margin: 0;
+
+    color: $color-text-secondary;
+
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__actions {
+    display: none;
+  }
+}
+
+@media (max-width: $tablet) {
+  .collection-hero {
+    &__actions {
+      width: 44px;
+      height: 44px;
+
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid $color-border-light;
+      border-radius: 12px;
+
+      background: $color-bg-card;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .collection-hero {
+    padding: 16px;
+
+    grid-template-columns: 1fr;
+
+    &__image-wrapper {
+      width: 100%;
+      height: 180px;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+  }
+}

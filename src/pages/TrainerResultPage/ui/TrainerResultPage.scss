@@ -1,0 +1,15 @@
+.trainer-result-page {
+  padding: 36px 16px 100px;
+  background: #f3f3f3;
+
+  &__container {
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .trainer-result-page {
+    padding: 24px 12px 64px;
+  }
+}

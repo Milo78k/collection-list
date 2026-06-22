@@ -1,0 +1,8 @@
+@use "@/app/styles/variables" as *;
+
+.collection-filters {
+  width: 100%;
+  padding: 24px;
+  background: $color-bg-card;
+  border-radius: 20px;
+}

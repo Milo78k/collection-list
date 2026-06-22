@@ -1,0 +1,120 @@
+@use "@/app/styles/variables" as *;
+
+.header {
+  background: $color-bg-card;
+  box-shadow: 0 4px 12px $color-border-light;
+
+  &__container {
+    max-width: $container-width;
+    height: 64px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  &__logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $color-primary;
+    color: $color-text-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: $color-bg-dark;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-weight: 500;
+    font-size: 16px;
+    color: $color-black;
+  }
+
+  &__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__login {
+    color: $color-primary;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__register {
+    min-width: 164px;
+    height: 48px;
+    padding: 0 28px;
+    border-radius: 12px;
+    background: $color-primary;
+    color: $color-text-white;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__burger {
+    display: none;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    span {
+      width: 20px;
+      height: 2px;
+      background: $color-text-primary;
+      border-radius: 2px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .header {
+    &__container {
+      height: 56px;
+      padding: 0 16px;
+    }
+
+    &__nav,
+    &__actions {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+    }
+
+    &__logo-text {
+      font-size: 20px;
+    }
+
+    &__logo-icon {
+      width: 28px;
+      height: 28px;
+      font-size: 14px;
+    }
+  }
+}

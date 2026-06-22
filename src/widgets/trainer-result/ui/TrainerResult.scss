@@ -1,0 +1,395 @@
+@use "@/app/styles/variables" as *;
+
+.trainer-result {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  &__stats-card,
+  &__questions-card {
+    border-radius: 20px;
+    background: $color-bg-card;
+    box-shadow: 0 8px 24px rgba(25, 25, 25, 0.08);
+  }
+
+  &__stats-card {
+    padding: 22px 20px 20px;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $color-text-primary;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  &__statistics-button {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: transparent;
+    color: $color-primary;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    cursor: pointer;
+
+    span {
+      font-size: 18px;
+      line-height: 1;
+    }
+  }
+
+  &__overview {
+    display: grid;
+    grid-template-columns: minmax(280px, 410px) minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  &__circle-card,
+  &__skills-card {
+    min-height: 300px;
+    padding: 22px;
+    border-radius: 16px;
+    background: $color-bg-card;
+    box-shadow: 0 6px 18px rgba(25, 25, 25, 0.06);
+  }
+
+  &__section-title {
+    margin: 0;
+    color: $color-text-primary;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  &__circle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__circle {
+    width: 210px;
+    height: 210px;
+    margin: 24px 0 20px;
+    padding: 20px;
+    border-radius: 50%;
+    transform: rotate(-35deg);
+  }
+
+  &__circle-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border-radius: 50%;
+    background: $color-bg-card;
+    color: $color-text-primary;
+    transform: rotate(35deg);
+
+    span:first-child {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    span:last-child {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+
+  &__mini-stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  &__mini-stat {
+    min-height: 48px;
+    padding: 8px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border-radius: 8px;
+    background: $color-bg-card;
+    box-shadow: 0 5px 16px rgba(25, 25, 25, 0.08);
+
+    span {
+      color: $color-text-secondary;
+      font-size: 10px;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    strong {
+      color: $color-text-primary;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1;
+    }
+  }
+
+  &__skills-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  &__skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__skill {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: $color-text-secondary;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  &__skill-progress {
+    width: 100%;
+    height: 9px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(106, 11, 255, 0.14);
+  }
+
+  &__skill-progress-line {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #3b008e 0%, #6a0bff 45%, #8f2cff 100%);
+  }
+
+  &__questions-card {
+    padding: 22px 20px 24px;
+  }
+
+  &__questions-title {
+    margin: 0 0 24px;
+    color: $color-text-primary;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  &__questions-list {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+    list-style: none;
+  }
+
+  &__question-card {
+    min-height: 132px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 18px;
+    border-radius: 10px;
+    background: $color-bg-card;
+    box-shadow: 0 6px 18px rgba(25, 25, 25, 0.08);
+  }
+
+  &__question-image-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  &__question-image,
+  &__question-placeholder {
+    width: 132px;
+    height: 132px;
+    display: block;
+  }
+
+  &__question-image {
+    object-fit: cover;
+  }
+
+  &__question-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efe3ff;
+  }
+
+  &__question-content {
+    padding: 4px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  &__question-title {
+    color: $color-text-primary;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__question-status {
+    min-height: 34px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 9px;
+    background: #f7f7f7;
+    color: $color-text-secondary;
+    font-size: 14px;
+    line-height: 1;
+
+    &--known {
+      color: $color-primary;
+    }
+
+    &--unknown,
+    &--unanswered {
+      color: $color-text-secondary;
+    }
+  }
+
+  &__status-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    flex-shrink: 0;
+    color: currentColor;
+  }
+}
+
+@media (max-width: $tablet) {
+  .trainer-result {
+    &__overview {
+      grid-template-columns: 1fr;
+    }
+
+    &__circle-card,
+    &__skills-card {
+      min-height: auto;
+    }
+
+    &__questions-list {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .trainer-result {
+    gap: 14px;
+
+    &__stats-card,
+    &__questions-card {
+      border-radius: 14px;
+    }
+
+    &__stats-card,
+    &__questions-card {
+      padding: 16px 12px;
+    }
+
+    &__header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__statistics-button {
+      font-size: 13px;
+    }
+
+    &__circle-card,
+    &__skills-card {
+      padding: 16px 12px;
+      border-radius: 12px;
+    }
+
+    &__section-title {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    &__circle {
+      width: 180px;
+      height: 180px;
+      margin: 20px 0 18px;
+    }
+
+    &__mini-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &__questions-title {
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    &__questions-list {
+      gap: 14px;
+    }
+
+    &__question-card {
+      min-height: 104px;
+      grid-template-columns: 104px minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    &__question-image,
+    &__question-placeholder {
+      width: 104px;
+      height: 104px;
+    }
+
+    &__question-title {
+      font-size: 13px;
+    }
+
+    &__question-status {
+      min-height: 30px;
+      padding: 0 10px;
+      font-size: 12px;
+    }
+  }
+}

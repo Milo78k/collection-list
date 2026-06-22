@@ -1,0 +1,49 @@
+@use "@/app/styles/variables" as *;
+
+.trainer-setup-page {
+  padding: 64px 16px 80px;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    min-height: 620px;
+    padding: 32px 32px 28px;
+    background: $color-bg-card;
+    border-radius: 24px;
+  }
+
+  &__title {
+    margin: 0 0 32px;
+    color: $color-text-primary;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  &__error {
+    margin: 0 0 20px;
+    color: #ff4d12;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .trainer-setup-page {
+    padding: 32px 12px 60px;
+
+    &__content {
+      min-height: auto;
+      padding: 20px;
+      border-radius: 18px;
+    }
+
+    &__title {
+      margin-bottom: 24px;
+      font-size: 24px;
+    }
+  }
+}

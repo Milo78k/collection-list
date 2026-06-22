@@ -1,0 +1,84 @@
+@use "@/app/styles/variables" as *;
+
+.mentor-card {
+  min-width: 360px;
+  padding: 20px;
+  min-height: 154px;
+  border: 1px solid $color-primary;
+  border-radius: 24px;
+  background: $color-bg-card;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    margin: 0 0 4px;
+    color: $color-text-primary;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__role {
+    margin: 0;
+    color: $color-text-secondary;
+    font-size: 16px;
+  }
+
+  &__description {
+    color: $color-text-primary;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+
+    a {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .mentor-card {
+    padding: 20px;
+
+    &__name {
+      font-size: 20px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+  }
+}
