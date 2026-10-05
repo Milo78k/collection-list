@@ -33,7 +33,6 @@ export const useQuestionsPage = () => {
   const skillsParam = searchParams.get("skills") || "";
   const complexityParam = searchParams.get("complexity") || "";
   const rateParam = searchParams.get("rate") || "";
-  const status = searchParams.get("status") || "Все";
 
   const filters: QuestionFilters = useMemo(
     () => ({
@@ -42,7 +41,6 @@ export const useQuestionsPage = () => {
       skills: getNumberArrayFromParams(skillsParam),
       complexity: getStringArrayFromParams(complexityParam),
       rate: getNumberArrayFromParams(rateParam),
-      status,
     }),
     [
       search,
@@ -50,7 +48,6 @@ export const useQuestionsPage = () => {
       skillsParam,
       complexityParam,
       rateParam,
-      status,
     ],
   );
 
@@ -63,7 +60,6 @@ export const useQuestionsPage = () => {
       skills: getNumberArrayFromParams(skillsParam),
       complexity: getStringArrayFromParams(complexityParam),
       rate: getNumberArrayFromParams(rateParam),
-      status,
     }),
     [
       debouncedSearch,
@@ -71,7 +67,6 @@ export const useQuestionsPage = () => {
       skillsParam,
       complexityParam,
       rateParam,
-      status,
     ],
   );
 
