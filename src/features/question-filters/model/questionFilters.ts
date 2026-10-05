@@ -4,5 +4,4 @@ export type QuestionFilters = {
   skills: number[];
   complexity: string[];
   rate: number[];
-  status: string;
 };

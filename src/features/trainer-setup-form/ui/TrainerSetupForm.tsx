@@ -7,7 +7,6 @@ import type { TrainerSetupFormValues } from "../model/trainerSetupTypes";
 
 import { TrainerSetupComplexitySection } from "./TrainerSetupComplexitySection";
 import { TrainerSetupLimitSection } from "./TrainerSetupLimitSection";
-import { TrainerSetupModeSection } from "./TrainerSetupModeSection";
 import { TrainerSetupSkillsSection } from "./TrainerSetupSkillsSection";
 import { TrainerSetupSpecializationSection } from "./TrainerSetupSpecializationSection";
 
@@ -35,7 +34,6 @@ export const TrainerSetupForm = ({
       specialization: null,
       skills: [],
       complexity: [1, 2, 3],
-      mode: "random",
       limit: 10,
       collection: null,
     },
@@ -56,8 +54,6 @@ export const TrainerSetupForm = ({
 
         <div className="trainer-setup-form__right">
           <TrainerSetupComplexitySection control={control} />
-
-          <TrainerSetupModeSection control={control} />
 
           <TrainerSetupLimitSection control={control} />
         </div>

@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# Interview Prep
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение для подготовки к техническим собеседованиям: каталог вопросов, тематические коллекции и тренажёр для самостоятельной проверки знаний.
 
-Currently, two official plugins are available:
+## Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Поиск вопросов, фильтры и серверная пагинация.
+- Страницы вопросов с ответами и очищенным HTML-контентом.
+- Каталог коллекций с фильтрами по специализации и доступности.
+- Настройка тренировки по специализации, навыкам, сложности и количеству вопросов.
+- Просмотр ответов, отметки «знаю / не знаю» и переход между вопросами.
+- Результаты тренировки: известные, неизвестные и пропущенные вопросы, прогресс по навыкам.
 
-## React Compiler
+## Стек
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React, TypeScript, Vite, Redux Toolkit, RTK Query, React Router, React Hook Form, SCSS, DOMPurify.
 
-## Expanding the ESLint configuration
+## Технические решения
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Структура по слоям `app / pages / widgets / features / entities / shared`.
+- Общий `baseApi` и расширение API через `injectEndpoints`.
+- Фильтры и номер страницы синхронизированы с URL; поиск использует debounce 400 мс.
+- Данные API и состояние прохождения тренировки разделены: RTK Query и отдельный Redux slice.
+- Подсчёт прогресса по самооценке пользователя; автоматической проверки правильности ответа нет.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Локальный запуск
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Требуется внешний API с маршрутами вопросов, коллекций, навыков, специализаций и mock-квизов. Backend не входит в репозиторий.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Создайте локальный `.env.local`:
+
+```dotenv
+VITE_API_BASE_URL=https://api.yeatwork.ru
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm ci
+npm run dev
 ```
+
+`npm run build` выполняет TypeScript-проверку и сборку Vite. `npm run lint` запускает ESLint.
+
+## Ограничения
+
+- Состояние тренировки хранится в памяти Redux и не сохраняется после перезагрузки.
+- Доступность данных зависит от внешнего API.
+- В репозитории нет отдельного набора автоматических тестов и настроенного GitHub Actions workflow.

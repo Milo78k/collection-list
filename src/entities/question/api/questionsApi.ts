@@ -45,9 +45,7 @@ const buildQuestionsParams = ({
     params.set("rate", filters.rate.join(","));
   }
 
-  if (filters?.status && filters.status !== "Все") {
-    params.set("status", filters.status);
-  }
+
 
   return params.toString();
 };
